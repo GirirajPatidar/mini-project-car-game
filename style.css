@@ -4,26 +4,73 @@
 }
 #game{
     height: 500px;
-    width: 390px;
-    border: 1px solid black;
-    margin: 1rem auto;
-    background:url(bg.jpg) ;
+    width: 330px;
+    border: 2px solid black;
+    margin: 0 auto;
+    background: url(bg.jpg);
     background-size: contain;
     overflow: hidden;
 }
-#bluecar{
-    height: 100px;
-    width: 130px;
-    background-color: black;
+#bluecar {
+    height: 80px;
+    width: 60px;
+    /* background-color: black; */
     position: relative;
-    top: 0px;
-    left: 0px;
+    top: 0;
+    left: 54px;
+    /* left: 108px; */
+    /* left: 216px; */
+    /* left: 54px; */
+    
+    text-align: right;
+    animation: move 1.5s linear  infinite;
+}
+
+#redcar {
+    height: 80px;
+    width: 80px;
+    /* background-color: red; */
+    position: relative;
+    top: 285px;
+    left: 108px;
     text-align: center;
-    animation: move 1s linear  infinite  ;
+}
+#result {
+    margin-top: 100px;
+    height: 500px;
+    width: 500px;
+    /* background-color: black; */
+    border: cornflowerblue;
+    margin: 0 auto;
+    text-align: center;
+    display: none;
 
 }
-#bluecar img{
-    height: 100px;
+.rs{
+    padding-top: 200px;
+}
+#result h1{
+    color: red;
+    font-style: italic;
+    letter-spacing: 1px;
+}
+#result p{
+    color: seagreen;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+#btn {
+    color: rgb(42, 195, 206);
+    background-color: black;
+    padding: 10px 20px 10px 20px;
+    letter-spacing: 1px;
+    font-size: 18px;
+}
+#btn:hover{
+    background-color: white;
+    color: yellowgreen;
+    cursor: pointer;
 }
 @keyframes move {
     0%{
@@ -32,44 +79,4 @@
     100%{
         top: 501px;
     }
-    
-}
-#racecar{
-    height: 100px;
-    width: 130px;
-    background-color: red;
-    position: relative;
-    top: 250px;
-    left: 130px;
-    text-align: center;
-}
-#racecar img{
-    height: 100px;
-}
-
-#result{
-    height: 200px;
-    width: 400px;
-    background-color: cornflowerblue;
-    margin:  1rem auto;
-    border-radius: 20px;
-    font-size: 30px;
-    text-align: center;
-    color: white;
-    display:none ;
-}
-#score{
-    font-size: 2.2rem;
-    color: brown;
-}
-#btn{
-    padding: 0.5rem 1rem;
-    border-radius: 20px;
-    border: none;
-    background-color: black;
-    color: cyan;
-    font-size: 25px;
-    margin-top: 10px;
-    cursor: pointer;
-    text-transform: uppercase;
 }
