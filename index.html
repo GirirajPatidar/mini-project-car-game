@@ -4,21 +4,25 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Racing moto</title>
+    <title>car game</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body style="background-color: black;">
     <div id="game">
-        <div id="bluecar"><img src="blue.png" alt=""></div>
-        <div id="racecar"><img src="race.png" alt=""></div>
-    </div>
-    <div id="result">
-        <h1>Game Over</h1>
-        <p id="score"></p>
-        <button id="btn" onclick="location.reload()">Restart</button>
+        <div id="bluecar"><img src="blue.png" width="100%" alt="" srcset=""></div>
+        <div id="redcar"><img src="race.png" width="100%" alt="" srcset=""></div>
     </div>
 
-    <audio id="jumpsound" src="jumpsound.mp3"></audio>
-    <script src="main.js"></script>
+    <div id="result">
+        <div class="rs">
+            <h1>Game Over</h1>
+            <p >score:<spam id="score"></spam></p>
+
+            <button id="btn" onclick="location.reload()">Restart</button>
+        </div>
+    </div>
+    <audio id="music" src="music.mp3"></audio>
+
+    <script src="custom.js"></script>
 </body>
 </html>
