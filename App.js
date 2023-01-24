@@ -1,48 +1,57 @@
-var blueCar = document.getElementById("bluecar");
-var raceCar = document.getElementById("racecar");
-var result = document.getElementById("result")
-const score =  document.getElementById("score")
-var game =  document.getElementById("game");
-var counter = 0;
-var jumpsound = document.getElementById("jumpsound")
+
+var bluecar = document.getElementById('bluecar');
+var redcar = document.getElementById('redcar');
+var result = document.getElementById('result');
+var score = document.getElementById('score');
+var game = document.getElementById('game');
+var musiC = document.getElementById('music');
+var counter = 0
 
 
+// bluecar move.........
 
-// bluecar move
-blueCar.addEventListener("animationiteration", function(){
-    var random = ((Math.floor(Math.random() * 3)) * 130)
-    blueCar.style.left = random + "px";
+bluecar.addEventListener('animationiteration', function(){
+    var random = Math.floor(Math.random()*3)*108;
+    bluecar.style.left=random + "px";
     counter++
-})
-
-//rececar move
-window.addEventListener("keydown", function(e){
-   if(e.keyCode == "39"){ var raceCarLeft = parseInt(window.getComputedStyle(raceCar).getPropertyValue("left"))
-    if(raceCarLeft < 260){raceCar.style.left = (raceCarLeft + 130) + "px"}
-    jumpsound.play()
-};
-
-    if(e.keyCode == "37"){
-        var raceCarLeft = parseInt(window.getComputedStyle(raceCar).getPropertyValue("left"))
-        if(raceCarLeft > 0){raceCar.style.left = (raceCarLeft - 130) + "px"
-        jumpsound.play()
-    }
-
-    }
-})
+});
 
 
-//Game over
-setInterval(function Gameover (){
-    var blueCarTop = parseInt(window.getComputedStyle(blueCar).getPropertyValue("top"))
-    var blueCarLeft = parseInt(window.getComputedStyle(blueCar).getPropertyValue("left"));
-    var raceCarLeft = parseInt(window.getComputedStyle(raceCar).getPropertyValue("left"));
-        if((blueCarLeft === raceCarLeft) && (blueCarTop > 250) && (blueCarTop < 450)){
+
+// redcar move.............
+
+window.addEventListener('keydown', function(e){
+    if(e.keyCode=="39"){var redcarleft = parseInt(window.getComputedStyle(redcar).getPropertyValue('left'));
+
+    if(redcarleft < 216){
+        redcar.style.left = (redcarleft + 108) + 'px'}
+        musiC.play()
+    };
+
+     if(e.keyCode=="37"){
+        var redcarleft = parseInt(window.getComputedStyle(redcar).getPropertyValue('left'));
+
+        if(redcarleft > 0){
+            redcar.style.left = (redcarleft - 108) + 'px'};
+            musiC.play()
+     }   
+});
+
+// Game Over..........
+
+setInterval(function gameover (){
+
+    var bluecartop = parseInt(window.getComputedStyle(bluecar).getPropertyValue('top'));
+    var bluecarleft = parseInt(window.getComputedStyle(bluecar).getPropertyValue('left'));
+    var redcarLeft= parseInt(window.getComputedStyle(redcar).getPropertyValue('left'));
+
+        if((bluecarleft === redcarLeft) && (bluecartop > 285) && (bluecartop < 365)){
             result.style.display = "block";
             game.style.display = "none";
-            score.innerHTML = `score: ${counter} `;
+            score.innerHTML=`${counter}`
 
-            counter = 0;
-        }
-}, 10)
-
+            counter=0
+        };
+        
+        
+}, 10);
